@@ -1,6 +1,7 @@
 header, main, footer {
     width: 100%;
 }
+
 #nav-links, #footer-items {
     list-style-type: none;
     display: flex;
@@ -23,12 +24,12 @@ header, main, footer {
 #home {
     flex-grow: 1;
 }
+
 #course-grid {
     max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px auto;
+    grid-template: 100px auto / 1fr 1fr 1fr;
     grid-gap: 15px 10px;
     padding-bottom: 20px;
 }
@@ -37,16 +38,15 @@ header, main, footer {
     align-self: end;
     margin-bottom: 10px;
 }
+
 .course_item {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template: 1fr 1fr 4fr / 1fr 2fr;
     grid-template-areas:
         "image number"
         "image title"
         "image description";
     grid-gap: 10px;
-    height: 300px;
     border: 2px solid black;
 }
 .course_image {
@@ -60,4 +60,24 @@ header, main, footer {
 }
 .course_description {
     grid-area: description;
+}
+.course_number, .course_title, .course_description {
+    margin: 10px 0 0 0;
+}
+
+@media only screen and (max-width: 640px) {
+    #course-grid {
+        grid-template: 100px auto / 1fr 1fr;
+    }
+    #page_title {
+        grid-column: 1 / 3;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #course-grid {
+        grid-template: 100px auto / 1fr;
+    }
+    #page_title {
+        grid-column: 1 / 2;
+    }
 }
