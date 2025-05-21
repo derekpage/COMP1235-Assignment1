@@ -47,6 +47,7 @@ header, main, footer {
         "image title"
         "image description";
     grid-gap: 10px;
+    height: 300px;
     border: 2px solid black;
 }
 .course_image {
