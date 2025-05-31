@@ -1,7 +1,29 @@
+/* Derek Page  - Seyma Sibel Ekinci */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&family=Spicy+Rice&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&family=Spicy+Rice&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+
 header, main, footer {
     width: 100%;
+
+}
+header,footer {
+    font-family:"Montserrat" , sans-serif;
+    font-weight: bold;
+
 }
 
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+a:hover {
+    background-color: #888888;
+}
 #nav-links, #footer-items {
     list-style-type: none;
     display: flex;
@@ -13,6 +35,7 @@ header, main, footer {
     padding: 20px;
     box-sizing: border-box;
     border: 2px solid black;
+    background-color: #8eb5b9;
 }
 #nav-links {
     justify-content: flex-end;
@@ -21,15 +44,18 @@ header, main, footer {
 #footer-items {
     justify-content: space-between;
 }
+
+
 #home {
     flex-grow: 1;
 }
-
 #course-grid {
+    font-family: Cardo , serif;
     max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template: 100px auto / 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px auto;
     grid-gap: 15px 10px;
     padding-bottom: 20px;
 }
@@ -37,11 +63,12 @@ header, main, footer {
     grid-column: 1 / 4;
     align-self: end;
     margin-bottom: 10px;
+    text-align: center;
 }
-
 .course_item {
     display: grid;
-    grid-template: 1fr 1fr 4fr / 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 4fr;
     grid-template-areas:
         "image number"
         "image title"
@@ -49,6 +76,7 @@ header, main, footer {
     grid-gap: 10px;
     height: 300px;
     border: 2px solid black;
+    background-color: #f1e3dd;
 }
 .course_image {
     grid-area: image;
@@ -62,21 +90,23 @@ header, main, footer {
 .course_description {
     grid-area: description;
 }
-.course_number, .course_title, .course_description {
-    margin: 10px 0 0 0;
-}
+/* Media query for screens below 640px */
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 640px) {
     #course-grid {
-        grid-template: 100px auto / 1fr 1fr;
+        grid-template: 100px / 1fr 1fr;
+        grid-template-rows: auto;
     }
     #page_title {
         grid-column: 1 / 3;
     }
 }
-@media only screen and (max-width: 400px) {
+
+/* Media query for screens below 400px */
+
+@media (max-width: 400px) {
     #course-grid {
-        grid-template: 100px auto / 1fr;
+        grid-template: 100px / 1fr;
     }
     #page_title {
         grid-column: 1 / 2;
